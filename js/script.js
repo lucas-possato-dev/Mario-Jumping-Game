@@ -44,6 +44,7 @@ const loop = setInterval(() => {
 
     reset.classList.add('active');
     document.removeEventListener('touchstart', jump);
+    document.removeEventListener('keydown', jump);
     clearInterval(loop);
   }
 
