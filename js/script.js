@@ -6,8 +6,12 @@ const reset = document.querySelector('.reset');
 
 let contador = 0;
 
-const jump = () => {
-  mario.classList.add('jump');
+const jump = (event) => {
+    if (event.type === 'keydown' && event.key === ' ') {
+      mario.classList.add('jump');
+    } else if (event.type === 'touchstart') {
+      mario.classList.add('jump');
+    }
 
   setTimeout(() => {
     mario.classList.remove('jump');
@@ -54,3 +58,4 @@ const handleReset = () => {
 
 reset.addEventListener('click', handleReset);
 document.addEventListener('keydown', jump);
+document.addEventListener('touchstart', jump);
