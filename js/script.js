@@ -43,7 +43,7 @@ const loop = setInterval(() => {
     mario.style.marginLeft = '50px';
 
     reset.classList.add('active');
-    document.removeEventListener('touchstart');
+    document.removeEventListener('touchstart', jump);
     clearInterval(loop);
   }
 
